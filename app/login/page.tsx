@@ -8,9 +8,7 @@ import { redirect } from "next/navigation";
 const LoginPage = async () => {
     const authResponse = await auth(); // Obter a resposta de autenticação
 
-    console.log(authResponse); // Verifique a estrutura do que foi retornado
-
-    const userID = authResponse.userId;  // Pegue o ID do usuário
+    const userID = authResponse.userId; // Pegue o ID do usuário
 
     if (userID) {
         redirect("/");
