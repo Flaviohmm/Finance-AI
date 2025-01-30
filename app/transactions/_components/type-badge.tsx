@@ -9,7 +9,7 @@ interface TransactionTypeBadgeProps {
 const TransactionTypeBadge = ({ transaction }: TransactionTypeBadgeProps) => {
     if (transaction.type === TransactionType.DEPOSIT) {
         return (
-            <Badge className="bg-muted font-bold text-primary hover:bg-muted">
+            <Badge className="bg-muted font-bold text-primary hover:bg-muted/70">
                 <CircleIcon className="mr-2 fill-primary" size={10} />
                 Depósito
             </Badge>
