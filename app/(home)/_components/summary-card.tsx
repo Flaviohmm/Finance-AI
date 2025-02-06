@@ -7,6 +7,7 @@ interface SummeryCardProps {
     title: string;
     amount: number;
     size?: "small" | "large";
+    userCanAddTransactions?: boolean;
 }
 
 const SummaryCard = ({
@@ -14,8 +15,9 @@ const SummaryCard = ({
     title,
     amount,
     size = "small",
+    userCanAddTransactions,
 }: SummeryCardProps) => {
-    return ( 
+    return (
         <Card>
             <CardHeader className="flex-row items-center gap-4">
                 {icon}
@@ -30,10 +32,12 @@ const SummaryCard = ({
                         currency: "BRL",
                     }).format(amount)}
                 </p>
-                {size === "large" && <AddTransactionButton />}
+                {size === "large" && (
+                    <AddTransactionButton userCanAddTransaction={userCanAddTransactions} />
+                )}
             </CardContent>
-        </Card> 
+        </Card>
     );
 }
- 
+
 export default SummaryCard;
